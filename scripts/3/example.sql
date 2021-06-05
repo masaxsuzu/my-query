@@ -56,3 +56,11 @@ SELECT
   start_year
 FROM
   employee_vm;
+SELECT
+  employee.emp_id,
+  employee.fname,
+  employee.lname,
+  department.name dept_name
+FROM
+  employee
+  INNER JOIN department on employee.dept_id = department.dept_id;
