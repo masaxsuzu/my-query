@@ -59,3 +59,24 @@ FROM
   account
 WHERE
   product_cd NOT IN ('CHK', 'SAV', 'CD', 'MM');
+SELECT
+  emp_id,
+  fname,
+  lname
+FROM
+  employee
+WHERE
+  LEFT(lname, 1) = 'T';
+SELECT
+  lname
+FROM
+  employee
+WHERE
+  lname like '_a%e%';
+SELECT
+  cust_id,
+  fed_id
+FROM
+  customer
+WHERE
+  fed_id LIKE '___-__-____';
