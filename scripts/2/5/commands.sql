@@ -59,8 +59,16 @@ FROM
  VALUES (2);
  */
 /* Nonexistent  key
-INSERT INTO
-  favorite_food(person_id, food)
-VALUES
-(333, 'sushi');
+ INSERT INTO
+ favorite_food(person_id, food)
+ VALUES
+ (333, 'sushi');
+ */
+/* Validation error
+UPDATE
+  person
+SET
+  gender = 'X'
+WHERE
+  person_id = 2;
  */
