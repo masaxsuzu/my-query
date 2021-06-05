@@ -57,4 +57,10 @@ FROM
 /* Duplicate key
  INSERT person(person_id)
  VALUES (2);
- /*
+ */
+/* Nonexistent  key
+INSERT INTO
+  favorite_food(person_id, food)
+VALUES
+(333, 'sushi');
+ */
