@@ -15,3 +15,10 @@ SELECT
   VERSION(),
   USER(),
   DATABASE();
+SELECT
+  emp_id,
+  'Active' status,
+  emp_id * 3.14159 emp_id_x_pi,
+  UPPER(lname) upper_last_name
+FROM
+  employee;
