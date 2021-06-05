@@ -80,3 +80,22 @@ FROM
   customer
 WHERE
   fed_id LIKE '___-__-____';
+SELECT
+  emp_id,
+  fname,
+  lname,
+  superior_emp_id
+FROM
+  employee
+WHERE
+  superior_emp_id IS NOT NULL;
+SELECT
+  emp_id,
+  fname,
+  lname,
+  superior_emp_id
+FROM
+  employee
+WHERE
+  superior_emp_id != 6
+  OR superior_emp_id IS NULL;
