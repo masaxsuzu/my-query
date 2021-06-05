@@ -12,6 +12,6 @@ down:
 	docker-compose down --volumes --remove-orphans
 
 fmt:
-	sqlformat --inputFile $S --outputFile $S
+	sql-formatter $S -o $S
 
 .PHONEY: run init up down fmt
