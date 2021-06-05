@@ -5,4 +5,4 @@ FROM
   product p
   INNER JOIN product_type pt ON p.product_type_cd = pt.product_type_cd
 WHERE
-  pt.name = 'Customer Accounts';
+  pt.name != 'Customer Accounts';
