@@ -130,3 +130,14 @@ FROM
   customer
 ORDER BY
   RIGHT(fed_id, 3);
+SELECT
+  emp_id,
+  title,
+  start_date,
+  fname,
+  lname
+FROM
+  employee
+ORDER BY
+  2,
+  5;
