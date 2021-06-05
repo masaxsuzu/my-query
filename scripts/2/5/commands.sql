@@ -32,3 +32,17 @@ WHERE
   ff.person_id = 2
 ORDER BY
   ff.food;
+UPDATE
+  person
+SET
+  address = '1225 Tremont St',
+  city = 'Boston',
+  state = 'MA',
+  coutry = 'US',
+  postal_code = '02138'
+WHERE
+  person_id = 1;
+SELECT
+  *
+FROM
+  person;
