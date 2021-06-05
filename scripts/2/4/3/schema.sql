@@ -13,6 +13,8 @@ CREATE TABLE person (
   postal_code VARCHAR(20),
   PRIMARY KEY(person_id)
 );
+ALTER TABLE
+  person MODIFY person_id SMALLINT UNSIGNED AUTO_INCREMENT;
 DROP TABLE IF EXISTS favorite_food;
 CREATE TABLE favorite_food(
   person_id SMALLINT UNSIGNED,
