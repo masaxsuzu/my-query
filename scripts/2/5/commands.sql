@@ -65,10 +65,18 @@ FROM
  (333, 'sushi');
  */
 /* Validation error
+ UPDATE
+ person
+ SET
+ gender = 'X'
+ WHERE
+ person_id = 2;
+ */
+/* Incorrect format
 UPDATE
   person
 SET
-  gender = 'X'
+  birth_date = 'DEC-21-1980'
 WHERE
   person_id = 2;
  */
