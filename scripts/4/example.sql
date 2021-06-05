@@ -41,3 +41,21 @@ FROM
 WHERE
   cust_type_cd = 'I'
   AND fed_id BETWEEN '500-00-0000' AND '999-99-9999';
+SELECT
+  account_id,
+  product_cd,
+  cust_id,
+  avail_balance
+FROM
+  account
+WHERE
+  product_cd IN ('CHK', 'SAV', 'CD', 'MM');
+SELECT
+  account_id,
+  product_cd,
+  cust_id,
+  avail_balance
+FROM
+  account
+WHERE
+  product_cd NOT IN ('CHK', 'SAV', 'CD', 'MM');
