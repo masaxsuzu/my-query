@@ -22,3 +22,8 @@ SELECT
   UPPER(lname) upper_last_name
 FROM
   employee;
+SELECT
+ /* requires sort*/
+  DISTINCT cust_id
+FROM
+  account;
