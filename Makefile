@@ -1,5 +1,5 @@
 S=./scripts/1/init.sql
-exec: fmt
+exec:
 	docker-compose exec mysql bash scripts/run.sh $S
 
 init:down up
