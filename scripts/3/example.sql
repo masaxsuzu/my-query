@@ -120,3 +120,13 @@ FROM
   account
 ORDER BY
   avail_balance DESC;
+SELECT
+  cust_id,
+  cust_type_cd,
+  city,
+  state,
+  fed_id
+FROM
+  customer
+ORDER BY
+  RIGHT(fed_id, 3);
