@@ -46,3 +46,11 @@ SELECT
   *
 FROM
   person;
+DELETE FROM
+  person
+WHERE
+  person_id = 1;
+SELECT
+  *
+FROM
+  person;
