@@ -103,3 +103,11 @@ WHERE
     title = 'Teller'
     AND start_date > '2003-01-01'
   );
+SELECT
+  open_emp_id,
+  product_cd
+FROM
+  account
+ORDER BY
+  open_emp_id,
+  product_cd;
