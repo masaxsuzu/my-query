@@ -54,3 +54,7 @@ SELECT
   *
 FROM
   person;
+/* Duplicate key
+ INSERT person(person_id)
+ VALUES (2);
+ /*
