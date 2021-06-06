@@ -104,3 +104,15 @@ FROM
     WHERE
       name = 'Woburn Branch'
   ) b ON e.assigned_branch_id = b.branch_id;
+SELECT
+  a.account_id,
+  e.emp_id,
+  b_a.name open_branch,
+  b_e.name emp_branch
+FROM
+  account a
+  INNER JOIN branch b_a ON a.open_branch_id = b_a.branch_id
+  INNER JOIN employee e ON a.open_emp_id = e.emp_id
+  INNER JOIN branch b_e ON e.assigned_branch_id = b_e.branch_id
+WHERE
+  a.product_cd = 'CHK';
