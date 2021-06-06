@@ -21,7 +21,6 @@ SELECT
 FROM
   employee e
   INNER JOIN department d USING(dept_id);
-
 /* ANSI Style */
 SELECT
   a.account_id,
@@ -41,7 +40,6 @@ WHERE
     OR e.title = 'Head Teller'
   )
   AND b.name = 'Woburn Branch';
-
 /* SQL92 Style */
 SELECT
   a.account_id,
@@ -59,3 +57,22 @@ WHERE
     OR e.title = 'Head Teller'
   )
   AND b.name = 'Woburn Branch';
+SELECT
+  a.account_id,
+  c.fed_id
+FROM
+  account a
+  INNER JOIN customer c ON a.cust_id = c.cust_id
+WHERE
+  c.cust_type_cd = 'B';
+SELECT
+  a.account_id,
+  c.fed_id,
+  e.fname,
+  e.lname
+FROM
+  account a
+  INNER JOIN customer c ON a.cust_id = c.cust_id
+  INNER JOIN employee e ON a.open_emp_id = e.emp_id
+WHERE
+  c.cust_type_cd = 'B';
