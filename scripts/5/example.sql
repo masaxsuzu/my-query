@@ -124,3 +124,15 @@ SELECT
 FROM
   employee e
   INNER JOIN employee e_mgr ON e.superior_emp_id = e_mgr.emp_id;
+SELECT
+  e1.fname,
+  e1.lname,
+  'VS',
+  e2.fname,
+  e2.lname
+FROM
+  employee e1
+  INNER JOIN employee e2 ON e1.emp_id < e2.emp_id
+WHERE
+  e1.title = 'Teller'
+  AND e2.title = 'Teller';
