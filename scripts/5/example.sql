@@ -21,3 +21,41 @@ SELECT
 FROM
   employee e
   INNER JOIN department d USING(dept_id);
+
+/* ANSI Style */
+SELECT
+  a.account_id,
+  a.cust_id,
+  a.open_date,
+  a.product_cd
+FROM
+  account a,
+  branch b,
+  employee e
+WHERE
+  a.open_emp_id = e.emp_id
+  AND e.start_date <= '2003-01-01'
+  AND e.assigned_branch_id = b.branch_id
+  AND (
+    e.title = 'Teller'
+    OR e.title = 'Head Teller'
+  )
+  AND b.name = 'Woburn Branch';
+
+/* SQL92 Style */
+SELECT
+  a.account_id,
+  a.cust_id,
+  a.open_date,
+  a.product_cd
+FROM
+  account a
+  INNER JOIN employee e ON a.open_emp_id = e.emp_id
+  INNER JOIN branch b ON e.assigned_branch_id = b.branch_id
+WHERE
+  e.start_date <= '2003-01-01'
+  AND (
+    e.title = 'Teller'
+    OR e.title = 'Head Teller'
+  )
+  AND b.name = 'Woburn Branch';
