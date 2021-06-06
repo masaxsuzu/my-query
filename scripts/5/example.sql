@@ -76,3 +76,31 @@ FROM
   INNER JOIN employee e ON a.open_emp_id = e.emp_id
 WHERE
   c.cust_type_cd = 'B';
+SELECT
+  a.account_id,
+  a.cust_id,
+  a.open_date,
+  a.product_cd
+FROM
+  account a
+  INNER JOIN (
+    SELECT
+      emp_id,
+      assigned_branch_id
+    FROM
+      employee
+    WHERE
+      start_date <= '2003-01-01'
+      AND (
+        title = 'Teller'
+        OR title = 'Head Teller'
+      )
+  ) e ON a.open_emp_id = e.emp_id
+  INNER JOIN (
+    SELECT
+      branch_id
+    FROM
+      branch
+    WHERE
+      name = 'Woburn Branch'
+  ) b ON e.assigned_branch_id = b.branch_id;
