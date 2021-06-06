@@ -1,4 +1,4 @@
 A1: A union     B = { L, M, N, O, P,    Q, R, S, T }
 A2: A union all B = { L, M, N, O, P, P, Q, R, S, T }
 A3: A intersect B = {             P                }
-A4: A except    B = { L, M, N, O,       Q, R, S, T }
+A4: A except    B = { L, M, N, O                   }
