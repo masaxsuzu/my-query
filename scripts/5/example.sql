@@ -116,3 +116,11 @@ FROM
   INNER JOIN branch b_e ON e.assigned_branch_id = b_e.branch_id
 WHERE
   a.product_cd = 'CHK';
+SELECT
+  e.fname,
+  e.lname,
+  e_mgr.fname mgr_fname,
+  e_mgr.lname mgr_lname
+FROM
+  employee e
+  INNER JOIN employee e_mgr ON e.superior_emp_id = e_mgr.emp_id;
