@@ -50,4 +50,20 @@ FROM
       account a
       LEFT JOIN individual i on a.cust_id = i.cust_id
   ) a_i
-  LEFT OUTER JOIN business b on a_i.cust_id = b.cust_id
+  LEFT OUTER JOIN business b on a_i.cust_id = b.cust_id;
+SELECT
+  e.fname,
+  e.lname,
+  e_mgr.fname mgr_fname,
+  e_mgr.lname mgr_lname
+FROM
+  employee e
+  LEFT OUTER JOIN employee e_mgr ON e.superior_emp_id = e_mgr.emp_id;
+SELECT
+  e.fname,
+  e.lname,
+  e_mgr.fname mgr_fname,
+  e_mgr.lname mgr_lname
+FROM
+  employee e
+  RIGHT OUTER JOIN employee e_mgr ON e.superior_emp_id = e_mgr.emp_id;
