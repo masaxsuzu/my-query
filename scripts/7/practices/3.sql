@@ -1,0 +1,6 @@
+SELECT
+  EXTRACT(
+    MONTH
+    FROM
+      CURRENT_DATE()
+  );
