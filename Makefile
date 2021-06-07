@@ -1,5 +1,5 @@
 S=./scripts/1/init.sql
-exec:
+exec:fmt
 	docker-compose exec mysql bash scripts/run.sh $S
 
 init:down up
@@ -13,5 +13,6 @@ down:
 
 fmt:
 	sql-formatter $S -o $S
+	sed -i -e 's/! =/!=/g' -e 's/< =/<=/g' -e 's/@ @ /@@/g' $S
 
 .PHONEY: run init up down fmt
