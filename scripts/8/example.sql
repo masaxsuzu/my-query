@@ -13,3 +13,11 @@ GROUP BY
   open_emp_id
 HAVING
   4 < COUNT(*);
+SELECT
+  product_cd,
+  MAX(avail_balance) max_blance,
+  COUNT(*) num
+FROM
+  account
+GROUP BY
+  product_cd;
