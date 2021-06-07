@@ -110,3 +110,18 @@ WHERE
     WHERE
       a.cust_id = c.cust_id
   );
+SELECT
+  a.account_id,
+  a.product_cd,
+  a.cust_id
+FROM
+  account a
+WHERE
+  NOT EXISTS(
+    SELECT
+      1
+    FROM
+      business b
+    WHERE
+      b.cust_id = a.cust_id
+  );
