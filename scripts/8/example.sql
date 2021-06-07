@@ -21,3 +21,11 @@ FROM
   account
 GROUP BY
   product_cd;
+SELECT
+  COUNT(account_id)
+FROM
+  account;
+SELECT
+  COUNT(DISTINCT open_emp_id)
+FROM
+  account;
