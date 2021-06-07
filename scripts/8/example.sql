@@ -1,9 +1,15 @@
 SELECT
-  emp_id
+  open_emp_id
 FROM
-  employee
-WHERE
-  emp_id != 1
-  AND emp_id <= 3;
+  account
+GROUP BY
+  open_emp_id;
 SELECT
-  @@global.time_zone;
+  open_emp_id,
+  COUNT(*) how_many
+FROM
+  account
+GROUP BY
+  open_emp_id
+HAVING
+  4 < COUNT(*);
