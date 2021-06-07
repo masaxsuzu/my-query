@@ -49,3 +49,18 @@ FROM
 GROUP BY
   product_cd,
   open_branch_id;
+SELECT
+  EXTRACT(
+    YEAR
+    FROM
+      start_date
+  ) year,
+  COUNT(*) num
+FROM
+  employee
+GROUP BY
+  EXTRACT(
+    YEAR
+    FROM
+      start_date
+  );
