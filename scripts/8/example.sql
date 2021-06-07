@@ -29,3 +29,7 @@ SELECT
   COUNT(DISTINCT open_emp_id)
 FROM
   account;
+SELECT
+  MAX(pending_balance - avail_balance) max_uncleared
+FROM
+  account
