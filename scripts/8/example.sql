@@ -33,7 +33,6 @@ SELECT
   MAX(pending_balance - avail_balance) max_uncleared
 FROM
   account;
-  
 SELECT
   product_cd,
   SUM(avail_balance)
@@ -41,3 +40,12 @@ FROM
   account
 GROUP BY
   product_cd;
+SELECT
+  product_cd,
+  open_branch_id,
+  SUM(avail_balance) tot_balance
+FROM
+  account
+GROUP BY
+  product_cd,
+  open_branch_id;
