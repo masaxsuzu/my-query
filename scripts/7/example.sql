@@ -37,3 +37,5 @@ SELECT
   fed_id REGEXP '.{3}-.{2}-.{4}' is_ss_no_format
 FROM
   customer;
+SET
+  time_zone = 'UTC';
