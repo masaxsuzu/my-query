@@ -39,3 +39,13 @@ FROM
   customer;
 SET
   time_zone = 'UTC';
+SELECT
+  *
+FROM
+  transaction;
+UPDATE
+  transaction
+SET
+  txn_date = '2021-06-07 02:00:00'
+WHERE
+  txn_id = 1111;
