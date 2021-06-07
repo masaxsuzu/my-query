@@ -73,3 +73,26 @@ FROM
 GROUP BY
   product_cd,
   open_branch_id WITH ROLLUP;
+SELECT
+  product_cd,
+  SUM(avail_balance) prod_balance
+FROM
+  account
+WHERE
+  status = 'ACTIVE'
+GROUP BY
+  product_cd
+HAVING
+  SUM(avail_balance) > 10000;
+SELECT
+  product_cd,
+  SUM(avail_balance) prod_balance
+FROM
+  account
+WHERE
+  status = 'ACTIVE'
+GROUP BY
+  product_cd
+HAVING
+  MIN(avail_balance) > 999
+  AND MAX(avail_balance) <= 10000
