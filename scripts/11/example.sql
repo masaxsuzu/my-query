@@ -23,3 +23,32 @@ SELECT
   END name
 FROM
   customer c;
+SELECT
+  CONCAT(
+    'ALERT : Account #',
+    a.account_id,
+    ' Has Incorrect Balance!'
+  )
+FROM
+  account a
+WHERE
+  (a.avail_balance, a.pending_balance) <> (
+    SELECT
+      SUM(
+        CASE
+          WHEN t.txn_type_cd = 'DBT' THEN t.amount * -1
+          ELSE t.amount
+        END
+      ),
+      SUM(
+        CASE
+          WHEN t.funds_avail_date > CURRENT_TIMESTAMP() THEN 0
+          WHEN t.txn_type_cd = 'DBT' THEN t.amount * -1
+          ELSE t.amount
+        END
+      )
+    FROM
+      transaction t
+    WHERE
+      t.account_id = a.account_id
+  );
