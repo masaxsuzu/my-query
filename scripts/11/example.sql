@@ -2,7 +2,8 @@ SELECT
   c.cust_id,
   c.fed_id,
   CASE
-    WHEN c.cust_type_cd = 'I' THEN (
+    c.cust_type_cd
+    WHEN 'I' THEN (
       SELECT
         CONCAT(i.fname, ' ', i.lname)
       FROM
@@ -10,7 +11,7 @@ SELECT
       WHERE
         c.cust_id = i.cust_id
     )
-    WHEN c.cust_type_cd = 'B' THEN (
+    WHEN 'B' THEN (
       SELECT
         b.name
       FROM
