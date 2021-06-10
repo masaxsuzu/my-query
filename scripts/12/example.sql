@@ -1,4 +1,5 @@
 START transaction;
+SAVEPOINT before_update;
 UPDATE
   account
 SET
@@ -6,4 +7,5 @@ SET
 WHERE
   account_id = 9988
   AND avail_balance > 500;
-ROLLBACK;
+ROLLBACK TO before_update;
+COMMIT;
