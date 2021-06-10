@@ -123,6 +123,10 @@ create table transaction (
   constraint fk_exec_branch_id foreign key (execution_branch_id) references branch (branch_id),
   constraint pk_transaction primary key (txn_id)
 );
+ALTER TABLE
+  department
+ADD
+  UNIQUE dept_name_idx(name);
 /* end table creation */
 /* begin data population */
 /* department data */
