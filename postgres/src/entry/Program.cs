@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Linq;
+
 using app.contexts;
+
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace app.entry
 {
@@ -8,7 +12,11 @@ namespace app.entry
     {
         static void Main(string[] args)
         {
-            using var context = new dbContext();
+            var builder = new DbContextOptionsBuilder<dbContext>()
+                .UseNpgsql("Host=localhost;Database=db;Username=root;Password=root")
+                .LogTo(Console.WriteLine, LogLevel.Information);
+
+            using var context = new dbContext(builder.Options);
             context._1s.RemoveRange(context._1s);
             context.SaveChanges();
             
