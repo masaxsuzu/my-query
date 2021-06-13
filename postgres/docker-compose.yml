@@ -15,3 +15,4 @@ services:
             TZ: "Asia/Tokyo"
         volumes: 
             - ./scripts:/scripts
+            - ./init:/docker-entrypoint-initdb.d
